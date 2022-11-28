@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>ePortfolio</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./eportfolio/images/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    var afficherMenu;
+    var isMenuHide;
+    var isProjectsHide;
+    var projects;
+    var listeProjects;
+    var transDroit;
+var transGauche;
+    function init() {
+        liensDuMenu = document.getElementById('liensDuMenu');
+        afficherMenu = document.getElementById("afficherMenu");
+        projects = document.getElementById("projects");
+        afficherMenu.addEventListener("click", menu);
+        liensDuMenu.style = "display: none;";
+        listeProjects=document.getElementById("listeProjects");
+        listeProjects.style = "display: none;";
+        projects.addEventListener("click", afficheProjects)
+        isMenuHide = true;
+        isProjectsHide = true;
+        nbrImages = 4;
+    transGauche = document.getElementById("gauche");
+    transDroit = document.getElementById("droit");
+    trans = 0;
+    transDroit.addEventListener("click", defilDroit);
+    transGauche.addEventListener("click", defilGauche);
+    transGauche.style = "z-index:0;"
+    }
+
+    function defilDroit() {
+    if (trans != nbrImages - 1) {
+        trans = trans + 1;
+        transGauche.style = "z-index:10;";
+    }
+    imgCARR.style.transform = "translate(" + document.getElementById('carroussel').clientWidth * (-1) * trans + "px)";
+    imgCARR.style.transition = "all 0.5s"
+    if (trans == nbrImages - 1)
+        transDroit.style = "z-index:0;";
+
+}
+
+function defilGauche() {
+
+    if (trans != 0) {
+        trans = trans - 1;
+        transDroit.style = "z-index:10;"
+    }
+    imgCARR.style.transform = "translate(" + document.getElementById('carroussel').clientWidth * (-trans) + "px)";
+    imgCARR.style.transition = "all 0.5s"
+    if (trans == 0) {
+        transGauche.style = "z-index:0;"
+    }
+
+}
+
+    function afficheProjects() {
+        if (isProjectsHide==true) {
+            listeProjects.style = "display: block;";
+            isProjectsHide = false;
+        }
+        else {
+            listeProjects.style = "display: none;";
+            isProjectsHide = true;
+        }
+    }
+    function menu() {
+        if (isMenuHide==true) {
+            liensDuMenu.style = "display: block;";
+            isMenuHide = false;
+        }
+        else {
+            liensDuMenu.style = "display: none;";
+            isMenuHide = true;
+        }
+    }
+
+    window.addEventListener("load", init);
+  </script>
+</head>
+<body>
+
+<div id="haut"></div>
+<div id="menuAccueil">
+    <div id="menu">
+        <button class="button-92" id="afficherMenu">MENU</button>
+        <div id="liensDuMenu">
+            <ul>
+                <a href="#menuAccueil">
+                <li>Accueil
+                </li>
+                </a>
+                <li><div id="projects">Projets</div>
+                    <ul id="listeProjects">
+                        <a href="#refonteSite">
+                            <li>
+                                Refonte d'un site d'agglomération
+                            </li>
+                         </a>
+                        <a href="#demineur">
+                        <li>
+                            Démineur
+                        </li>
+                        </a>
+                        <a href="#PCCGraphes">
+                        <li>
+                            PCCGraphes
+                        </li>
+                        </a>
+                        <a href="#Six-qui-Prend">
+                        <li>
+                            6-qui-Prend !
+                        </li>
+                        </a>
+                    </ul>
+                </li>
+                <a href="#propos">
+                <li>A propos</li></a>
+            </ul>
+        </div>
+    </div>
+    <div id="accueil">
+        <h3>BIENVENUE !</h3>
+        <p>
+            Bonjour et bienvenue sur mon portfolio ! </br>
+            Je répertorie sur cette page web une liste de projets (non exhaustive) informatiques que j'ai eu 
+            l'occasion de réaliser.
+            Vous pourrez retrouver quelques informations sur les réalisations. </br>
+            
+            
+            Bonne visite !
+  </br>
+            </br>
+            Adrien Deü
+        </p>
+    </div>
+</div>
+<div id="projets">
+    <div class="projet" id="refonteSite">
+        <div id = "textExplicatif">
+            <h4>Refonte d'un site d'agglomération</h4>
+            <p>
+                Projet réalisé en début de BUT2 en HTML/CSS et JavaScript, il s'agit de la refonte d'un site de l'agglomération
+                Privas Centre Ardèche avec une maquette et un design repensé. Ce travail réalisé en équipe m'a
+                permis de me familiariser avec github pour travailler à distance sur un même projet.
+            </p>
+        </div>
+        <img class="image-zoomBis" id="accueilSite" src="./eportfolio/images/refonteSite.png" href="saeRefonteSite">
+    </div>
+<div class="projet" id="demineur">
+    <div id = "textExplicatif">
+    <h4>Démineur</h4>
+    <p id = "demineurText">
+        Projet réalisé dans le cadre du cours d'IHM en langage VB.net a consisté en 
+        l'implémentation d'un démineur avec personnalisation de la grille, des couleurs, du niveau 
+        de difficulté, mais aussi réglage d'un temps imparti par l'utilisateur. De plus, un menu permet 
+        d'afficher les scores de 
+        chaque joueur connu. 
+    </p>
+    </div>
+    <div id="carroussel">
+        <img id="droit" src="eportfolio/images/chevron.png">
+        <img id="gauche" src="eportfolio/images/chevron.png">
+        <div id="imgCARR">
+            <div id="fig1">
+                <p id="text1">Partie</p>
+                <img id="img1" src="eportfolio/images/jeu.png">
+            </div>
+            <div id="fig2">
+                <P id="text2">Menu d'options</P>
+                <img id="img2" src="eportfolio/images/options.png">
+            </div>
+            <div id="fig3">
+                <p id="text3">Menu des scores</p>
+                <img id="img3" src="eportfolio/images/scores.png">
+            </div>
+            <div id="fig4">
+                <p id="text4">Accueil</p>
+                <img id="img4" src="eportfolio/images/accueil.png">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="projet" id="PCCGraphes">
+    <div id = "textExplicatif">
+    <h4>PCCGraphes</h4>
+    <p>
+        Projet réalisé en JAVA, il s'agit de deux algorithmes de calcul du plus court chemin 
+        d'un graphe entre une source et une destination via les algorithmes de Dijkstra et de Bellman. 
+        Les graphes sont représentés par des listes ou des matrices d'adjacence.
+        Des excepions sont également gérées comme la tentative de calcul de PCC avec Bellman
+        d'un graphe avec circuit.
+    </p>
+    </div>
+    <img class="image-zoomBis" id="PCCGraphesIMG" src="./eportfolio/images/graphe.png" href="Graphe">
+</div>
+<div class="projet" id="Six-qui-Prend">
+<div id = "textExplicatif">
+<h4>6-Qui-Prend !</h4>
+<p>
+    Projet réalisé en JAVA, il s'agit de l'implémentation du jeu de cartes
+    6-Qui-Prend.
+  Ce projet m'a permis de découvrir la programmation orientée objet en première année ainsi que
+  de découvrir le langage JAVA.
+  
+</p>
+</div>
+<img class="image-zoomBis" id="sixQuiPrendIMG" src="./eportfolio/images/6quiPrend.jpg" href="6quiPrend">
+</div>
+<a id="flecheHaut" href="#haut">
+    <img class="image-zoom" id="retourAccueil" src="./eportfolio/images/fleche.png">
+</a>    
+<div class="foot" id="propos">
+    <p>Site réalisé par Adrien Deü en </br>
+        HTML/CSS et JavaScript.</br>
+        Contactez-moi !
+    </p>
+    <a class="foot" href="https://www.linkedin.com/in/adrien-de%C3%BC-3487b81b8/">
+        <img src="./eportfolio/images/Linkedin.png">
+    </a>
+    <a class="foot" href="https://github.com/AdrienDeu">
+        <img id="github" src="./eportfolio/images/github.png">
+    </a>
+    <a class="foot" href="mailto:adrien.deu@etu.u-paris.fr">
+        <img id="mail" src="./eportfolio/images/outlook.png">
+    </a>
+</div>
+
+</body>
+</html>
