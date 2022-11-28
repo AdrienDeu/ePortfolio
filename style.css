@@ -536,7 +536,7 @@ body {
   #accueil {
     margin-top: 50px;
     width: 300px;
-    height: 360px;
+    height: auto;
   }
   
   #propos img {
