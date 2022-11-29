@@ -150,6 +150,7 @@ body {
   margin: 20px;
   color: #FFFCF2;
   text-align: justify;
+  text-justify: auto;
   }
   #accueil > h3 {
   text-align: center;
@@ -222,7 +223,8 @@ body {
 
   
   .projet p {
-  text-align: justify;
+    text-align: justify;
+  text-justify: auto;
   color: #FFFCF2;
   margin-right: 50px;
   }
@@ -393,12 +395,14 @@ body {
   .textExplicatif {
   margin: 10px;
   width: 380px;
-  text-align: center;
+  text-align: justify;
+  text-justify: auto;
   }
   
   #demineurText {
   width: 380px;
   text-align: justify;
+text-justify: auto;
   }
   .projet > h4 {
   color: black(222, 222, 222);
@@ -512,12 +516,15 @@ body {
   }
 
   #carroussel {
+    bottom: 0;
     height : auto;
     width: 300px;
+
   }
 
   .fig {
-    height : auto;
+
+    height : 205px;
     width: 300px;
   }
   
