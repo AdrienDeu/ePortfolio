@@ -1,534 +1,250 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <title>ePortfolio</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="./images/logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-    background-color: #FFFCF2;
-    margin: 0px;
-    padding: 0px;
-  }
-
-
-  .zoom {
-    overflow: hidden;
-    width: 452px;
-    height: 300px;
-  }
-
-  #ad {
-    padding-top: 24px;
-  }
-
-  #projets {
-    color: #FFFCF2;
-    margin-left: 20px;
-    margin-top: auto;
-    margin-bottom: auto;
-  }
-  #ad {
-    text-align: center;
-    margin: 0;
-  }
-
-  #liensContact {
-    margin: 20px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-  }
-  #github {
-    margin-left: 130px;
-    margin-right: 130px;
-  }
-::selection {
-    background-color: #FFFCF2;
-    color: #403D39;
-  }
-  
-  nav > ul {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    list-style-type: none;
-    color: #FFFCF2;
-    margin: auto;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-  }
-
-
-
-  nav ul li {
-    width: 15%;
-    text-align: center;
-    position: relative;
-    list-style: none;
-  }
-  nav a {
-    text-decoration: none;
-  }
-
-
-  .sous {
-    display: none;
-    position: absolute;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    z-index: 1000;
-
-  }
-
-  nav > ul li:hover .sous{
-    display: block;
-  }
-  .sous li {
+  <script>
+    var transDroit;
+    var transGauche;
+    function init() {
+    nbrImages = 4;
+    transGauche = document.getElementById("gauche");
+    transDroit = document.getElementById("droit");
+    trans = 0;
+    transDroit.addEventListener("click", defilDroit);
+    transGauche.addEventListener("click", defilGauche);
+    transGauche.style = "z-index:0;"
     
-    background-color: #252422;
-    width: 100%;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    list-style-position: inside;
-  }
-
-
-  .sous a:hover {
-    text-decoration: underline;
-  }
-
-  nav {
-    background-color: #252422;
-    margin: 0 auto;
-    top: 0;
-    padding: 0px;
-
-  }
-
-  a {
-    text-decoration: none;
-    color: #FFFCF2;
-  }
-
-
-
-  
-  
-  .fig {
-  height: 3OOpx;
-  width: 457px;
-  }
-  
-
-  .textExplicatif {
-  margin-left: 50px;
-  width: 300px;
-  }
-
-  
- 
-  .projet, #accueil {
-  border-radius: 10px;
-  }
-  
-  
-  /* #menuAccueil {
-  margin-top: 50px;
-  height: 400px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  } */
-  #accueil {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  background-color: #403D39;
-  /* box-shadow: -10px 10px 3px 1px #000000; */
-  box-shadow: 0px 0px 18px 8px #00000093;
-  width: 500px;
-  height: auto;
-  margin : auto;
-  margin-top: 100px;
-  }
-  #accueil > p {
-  margin: 20px;
-  color: #FFFCF2;
-  text-align: justify;
-  }
-  #accueil > h3 {
-  text-align: center;
-  color: #FFFCF2;
-  }
-  
-
-  /*
-  #retourAccueil {
-  position: sticky;
-  max-width: 100%;
-  height: 50px;
-  float: right;
-  margin-right: 40px;
-  bottom: 40px;
-  background-color: #FFFCF2;
-  }
-  */
-  
-
-  
-
-  
-  #projects:hover {
-  cursor: pointer;
-  }
-  .projet {
-  overflow: hidden;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 70px;
-  padding: 0px;
-  height: 300px;
-  width: 800px;
-  display: flex;
-  flex-direction: row;
-  background-color: #403D39;
-  box-shadow: 0px 0px 18px 8px #00000093;
-  }
-  
-  .projet h4 {
-  color: #FFFCF2;
-  font-size: 20px;
-  text-align: center;
-  width: 250px;
-  margin-top: 5px;
-  
-  }
-
-  
-  .illustration {
-  width: 457px;
-  height: 300px;
-  border-bottom-right-radius: 10px;
-  border-top-right-radius: 10px;
-  -webkit-transition: all 1s ease; /* Safari et Chrome */
-  -moz-transition: all 1s ease; /* Firefox */
-  -ms-transition: all 1s ease; /* Internet Explorer 9 */
-  -o-transition: all 1s ease; /* Opera */
-  transition: all 1s ease;
-  }
-  .illustration:hover {
-
-    -webkit-transform:scale(1.25); /* Safari et Chrome */
-    -moz-transform:scale(1.25); /* Firefox */
-    -ms-transform:scale(1.25); /* Internet Explorer 9 */
-    -o-transform:scale(1.25); /* Opera */
-    transform : scale(1.25);
-  }
-
-  
-  .projet p {
-  text-align: justify;
-  color: #FFFCF2;
-  margin-right: 50px;
-  }
-
-
-
-  
-  h1 {
-    text-align: center;
-  }
-  
-  #logo {
-  margin-bottom: 0px;
-  width: 5%;
-  height: 5%;
-  }
-  
-  
-  
-
-
-
-  
-  /*scrollbar*/
-  ::-webkit-scrollbar {
-  width: 10px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
-  background: #FFFCF2; 
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
-  background: #403D39; 
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
-  background: #252422; 
-  }
-  
-  #propos {
-  background-color: #252422;
-  justify-content: center;
-  margin-top: 100px;
-  height: 150px;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  }
-  
-  #propos img {
-  width: 60px;
-  height: 60px;
-  }
-
-  #propos p {
-    color:#FFFCF2;
-  }
-  
-  #demineurText {
-  margin-right: 50px;
-  }
-  
-  
-  #text1, #text2, #text3, #text4 {
-  position: absolute;
-  bottom: 0;
-  right: 20px;
-  font-size: 1.5em;
-  color: #FFFCF2;
-  background-color: #252422;
-  }
-  
-  #imgCARR {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  display: flex;
-  flex-direction: row;
-  height: 3OOpx;
-  width: 457px;
-  }
-  
-  #droit, #gauche {
-  margin-top: 140px;
-  z-index: 10;
-  width: 50px;
-  height: auto;
-  }
-  
-  #gauche {
-  transform: rotate(180deg);
-  position: absolute;
-  top: 0;
-  left: 0;
-  }
-  
-  #droit:hover, #gauche:hover {
-  cursor: pointer;
-  }
-  
-  #droit {
-  position: absolute;
-  top: 0;
-  right: 0;
-  }
-  
-  #carroussel {
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
-  display: flex;
-  flex-direction: row;
-  position: relative;
-  height: 3OOpx;
-  width: 457px;
-  overflow: hidden;
-  }
-  
-  #fig1, #fig2, #fig3, #fig4 {
-  position: relative;
-  }
-
-  .liste {
-    border-top: 1px solid #FFFCF2;
-  }
-  
-  
-  @media (max-width: 818px) {
-    nav ul {
-      justify-content:center;
-      padding: 0px;
-      padding-top:20px;
-      padding-bottom: 20px;
-      margin: 0;
-      
     }
 
-    .deroulant {
-      width: 100px;
+    function defilDroit() {
+    if (trans != nbrImages - 1) {
+        trans = trans + 1;
+        transGauche.style = "z-index:10;";
     }
-    
-    #propos img {
-      width: 40px;
-      height: 40px;
-      }
-    #github {
-      margin-left: 60px;
-      margin-right: 60px;
+    imgCARR.style.transform = "translate(" + document.getElementById('carroussel').clientWidth * (-1) * trans + "px)";
+    imgCARR.style.transition = "all 0.5s"
+    if (trans == nbrImages - 1)
+        transDroit.style = "z-index:0;";
+
+}
+
+function defilGauche() {
+
+    if (trans != 0) {
+        trans = trans - 1;
+        transDroit.style = "z-index:10;"
     }
-
-
-  .projet {
-  height: auto;
-  flex-direction: column;
-  margin-top: 70px;
-  width: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  }
-
-  h4 {
-  text-align: center;
-  margin: auto;
-  }
-  
-  .textExplicatif {
-  margin: 10px;
-  width: 380px;
-  text-align: center;
-  }
-  
-  #demineurText {
-  width: 380px;
-  text-align: justify;
-  }
-  .projet > h4 {
-  color: black(222, 222, 222);
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-  } 
-
-
-
-  #carroussel {
-    width: 400px;
-  }
-
-  #accueil {
-  height: auto;
-  width:452px;
-  margin: auto;
-  }
-  
-  nav {
-    margin-bottom: 100px;
-  }
-
-
-
-  .fig {
-  height: 274px;
-  width: 400px;
-  }
-  
-  #droit, #gauche {
-  margin-top: 120px;
-  width: 30px;
-  }
-  
-
-  
-
-  
-  #text1, #text2, #text3, #text4 {
-  font-size: 1.3em;
-  text-align: center;
-  }
-  .projet p {
-    margin-right: 0px;
+    imgCARR.style.transform = "translate(" + document.getElementById('carroussel').clientWidth * (-trans) + "px)";
+    imgCARR.style.transition = "all 0.5s"
+    if (trans == 0) {
+        transGauche.style = "z-index:0;"
     }
 
+}
 
-  .illustration {
-  border-top-left-radius: 0%;
-  border-top-right-radius: 0%;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  height: 274px;
-  width: 400px;
-  margin: 0;
-  padding: 0;
-  }
 
-  
-  .zoom {
-    border-top-left-radius: 0%;
-    border-top-right-radius: 0%;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    width: 420px;
-    height: 274px;
-    overflow: hidden;
-  }
-  }
-  
-  
-  
-  @media (max-width: 500px) {
 
-  #github {
-    margin-left: 30px;
-    margin-right: 30px;
-  }
-  #propos {
-    padding: 5px;
-  }
-  .textExplicatif {
-    width: 280px;
-  }
-  #demineurText {
-    width: 280px;
-  }
-  .projet {
-    height: auto;
-    width : 300px;
-  }
-  /*
-  #retourAccueil {
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-  */
-  .illustration {
-    margin: 0px;
-    width : 300px;
-    height: 197px;
-  }
+    window.addEventListener("load", init);
+  </script>
+</head>
+<body>
 
-  .zoom {
-    margin: 0px;
-    width : 300px;
-    height: 197px;
-  }
+    <nav>
 
-  #carroussel {
-    width: 300px;
-  }
-  
-  #accueil {
-    margin-top: 50px;
-    width: 300px;
-    height: 330px;
-  }
-  
-  #propos img {
-    width: 40px;
-    height: 40px;
-  }
+        <ul>
+            <li class="deroulant">
+                <a href="#">DATA</a>
+                <ul class="sous">
+                    <li></li>
+                    <a href="#statsData">
+                    <li class="liste">
+                        Exploitation BD
+                    </li>
+                </a>
+                </ul>
+            </li>
+            <li class="deroulant web">
+                <a href="#">WEB</a>
+                <ul class="sous">
+                    <li></li>
+                    <a href="#refonteSite">
+                    <li class="liste">
+                        
+                            Refonte d'un site
+                        
+                    </li>
+                </a>
+                </ul>
+            </li>
+            <li class="deroulant">
+                <a href="#">LOGICIEL</a>
+                <ul class="sous">
+                    <li></li>
+                    <a href="#demineur">
+                    <li class="liste">
+                            Démineur
+                    </li>
+                    </a>
 
-  #gauche, #droit {
-    margin-top: 125px;
-  }
+                    <a href="#PCCGraphes">
+                    <li class="liste">
+                        
+                            PCCGraphes
+                    </li>
+                    </a>
+                    <a href="#Six-qui-Prend">
+                    <li class="liste">
+                        
+                            6-Qui-Prend !
+                    </li>
+                    </a>
+
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <div id="accueil">
+        <h3>BIENVENUE !</h3>
+        <p>
+            Bonjour et bienvenue sur mon portfolio ! </br>
+            Je m'appelle Adrien Deü et je suis actuellement étudiant à l'IUT Paris - Rives de Seine en deuxième année de BUT informatique.
+            Je répertorie sur cette page web une liste non exhaustive de projets informatiques que j'ai eu 
+            l'occasion de réaliser ainsi que quelques informations sur ces projets. </br></br>
+            
+            
+            Bonne visite !
+        </p>
+    </div>
+<div class="projets">
+    <div class="projet" id="refonteSite">
+        <div class = "textExplicatif">
+            <h4>Refonte d'un site d'agglomération</h4>
+            <p>
+                Projet réalisé en début de deuxième année de BUT en HTML/CSS et JavaScript, il s'agit de la refonte d'un site de l'agglomération
+                Privas Centre Ardèche avec une maquette et un design repensé. Ce travail réalisé en équipe m'a
+                permis de me familiariser avec github pour travailler à distance sur un même site mais également faire du versioning.
+            </p>
+        </div>
+        <div class="zoom">
+        <img class="illustration" alt="page d'accueil du site refait" id="accueilSite" src="./images/refonteSite.png" href="saeRefonteSite">
+    </div>
+        </div>
+    </div>
+</div>
+<div class="projets">
+    <div class="projet" id="demineur">
+    <div class = "textExplicatif">
+    <h4>Démineur</h4>
+    <p id = "demineurText">
+        Ce projet réalisé dans le cadre du module d'IHM de fin de première année de en langage VB.net a consisté en 
+        l'implémentation d'un démineur avec personnalisation de la grille, des couleurs, du niveau 
+        de difficulté, mais aussi réglage d'un temps imparti par l'utilisateur. De plus, un menu permet 
+        d'afficher les scores de 
+        chaque joueur connu. 
+    </p>
+    </div>
+    <div class="fig" id="carroussel">
+        <img id="droit" src="./images/chevron.png">
+        <img id="gauche" src="./images/chevron.png">
+        <div class="fig" id="imgCARR">
+            <div class="fig" id="fig1">
+                <p id="text1">Partie</p>
+                <img class="fig" id="img1" src="./images/jeu.png">
+            </div>
+            <div class="fig" id="fig2">
+                <P id="text2">Menu d'options</P>
+                <img class="fig" id="img2" src="./images/options.png">
+            </div>
+            <div class="fig" id="fig3">
+                <p id="text3">Menu des scores</p>
+                <img class="fig" id="img3" src="./images/scores.png">
+            </div>
+            <div class="fig" id="fig4">
+                <p id="text4">Accueil</p>
+                <img class="fig" id="img4" src="./images/accueil.png">
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="projets">
+        <div class="projet" id="statsData">
+            <div class = "textExplicatif">
+                <h4>Exploitation statistique d'une base de données</h4>
+                <p>
+                    Projet réalisé en fin de première année de BUT en python et SQL, il s'agit de l'exploitation statistique d'une base
+                    de données stockant des informations sur les clients d'une chaîne de magasins de vente de produits alimentaires.
+                    J'ai notamment extrait des graphiques
+                    à partir de ces données comme celui ci-contre qui présente le nombre de personnes dans les foyers des cliens en 
+                    fonction des différentes villes d'implémentation de la chaîne.
+                </p>
+            </div>
+            <div class="zoom">
+            <img class="illustration" alt="Graphique python" id="graphiquePython" src="./images/dataSchema.png">
+        </div>
+            </div>
+        </div>
+    </div>
+    <div class="projets">
+        <div class="projet" id="PCCGraphes">
+            <div class = "textExplicatif">
+                <h4>PCCGraphes</h4>
+                <p>
+                    Projet réalisé en JAVA en fin de première année, il s'agit de deux algorithmes de calcul du plus court chemin 
+                    d'un graphe entre une source et une destination via les algorithmes de Dijkstra et de Bellman. 
+                    Les graphes sont représentés par des listes ou des matrices d'adjacence.
+                    Des excepions sont également prises en compte telle que la tentative de calcul de PCC avec Bellman
+                    d'un graphe avec circuit qui déclenche une exception spécifique.
+                </p>
+            </div>
+            <div class="zoom">
+
+             <img class="illustration" alt="Exemple de graphe" id="PCCGraphesIMG" src="./images/graphe.png" href="Graphe">
+            </div>
+        </div>
+        </div>
+    </div>
+<div class="projets">
+<div class="projet" id="Six-qui-Prend">
+<div class = "textExplicatif">
+<h4>6-Qui-Prend !</h4>
+<p>
+    Projet réalisé en JAVA en première année, il s'agit de l'implémentation du jeu de cartes
+    6-Qui-Prend !
+  Ce projet m'a permis de découvrir la programmation orientée objet ainsi que
+  de découvrir le langage JAVA.
   
-  }
-  
+</p>
+</div>
+<div class="zoom">
+<img class="illustration" alt="Partie de '6-Qui-Prend !'"id="sixQuiPrendIMG" src="./images/6quiPrend.jpg" href="6quiPrend">
+</div>
+</div>
+</div>
+</div>
+<!--<a id="flecheHaut" href="#menuAccueil">
+    <img class="image-zoom" id="retourAccueil" src="./images/fleche.png">
+</a> -->
+<div id="propos">
+    <p id="ad">Site Web réalisé par Adrien Deü</br>
+        Contacts :
+    </p>
+    <div id="liensContact">
+        <a href="https://www.linkedin.com/in/adrien-de%C3%BC-3487b81b8/">
+            <img alt="Ma page linkedin" src="./images/Linkedin.png">
+        </a>
+        <a href="https://github.com/AdrienDeu">
+            <img alt="Ma page github" id="github" src="./images/github.png">
+        </a>
+        <a href="mailto:adrien.deu@etu.u-paris.fr">
+            <img alt="M'envoyer un mail" id="mail" src="./images/outlook.png">
+        </a>
+    </div>
+</div>
+
+</body>
+</html>
