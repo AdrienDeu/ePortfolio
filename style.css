@@ -512,13 +512,19 @@ body {
   }
 
   #carroussel {
+    height : auto;
+    width: 300px;
+  }
+
+  .fig {
+    height : auto;
     width: 300px;
   }
   
   #accueil {
     margin-top: 50px;
     width: 300px;
-    height: 330px;
+    height:auto;
   }
   
   #propos img {
@@ -526,8 +532,11 @@ body {
     height: 40px;
   }
 
+  #text1, #text2, #text3, #text4 {
+    font-size: 1em;
+  }
   #gauche, #droit {
-    margin-top: 125px;
+    margin-top: 90px;
   }
   
   }
